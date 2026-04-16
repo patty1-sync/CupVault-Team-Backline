@@ -4,8 +4,10 @@ import os
 import logging
 
 from backend.db_connection import init_app as init_db
-from backend.simple.simple_routes import simple_routes
-from backend.ngos.ngo_routes import ngos
+from backend.cupvault_routes.team_routes import teams
+from backend.cupvault_routes.matches_routes import matches
+from backend.cupvault_routes.users_routes import users
+from backend.cupvault_routes.admin_routes import admin
 
 
 def create_app():
@@ -35,7 +37,9 @@ def create_app():
     # Register the routes from each Blueprint with the app object
     # and give a url prefix to each.
     app.logger.info("create_app(): registering blueprints")
-    app.register_blueprint(simple_routes)
-    app.register_blueprint(ngos, url_prefix="/ngo")
+    app.register_blueprint(teams)
+    app.register_blueprint(matches)
+    app.register_blueprint(users)
+    app.register_blueprint(admin)
 
     return app

@@ -33,14 +33,14 @@ SideBarLinks(show_home=True)
 # ***************************************************
 
 logger.info("Loading the Home page of the app")
-st.title('CS 3200 Project Template')
+st.title('CupVault')
 st.write('#### Hi! As which user would you like to log in?')
 
 # For each of the user personas for which we are implementing
 # functionality, we put a button on the screen that the user
 # can click to MIMIC logging in as that mock user.
 
-if st.button("Act as John, a Political Strategy Advisor",
+if st.button("Act as Jason, a Political Strategy Advisor",
              type='primary',
              use_container_width=True):
     # when user clicks the button, they are now considered authenticated
