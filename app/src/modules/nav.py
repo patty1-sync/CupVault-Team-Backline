@@ -1,7 +1,3 @@
-# Idea borrowed from https://github.com/fsmosca/sample-streamlit-authenticator
-
-# This file has functions to add links to the left sidebar based on the user's role.
-
 import streamlit as st
 
 
@@ -15,80 +11,71 @@ def about_page_nav():
     st.sidebar.page_link("pages/30_About.py", label="About", icon="🧠")
 
 
-# ---- Role: pol_strat_advisor ------------------------------------------------
+# ---- Role: fan --------------------------------------------------------------
 
-def pol_strat_home_nav():
-    st.sidebar.page_link(
-        "pages/00_Pol_Strat_Home.py", label="Political Strategist Home", icon="👤"
-    )
+def fan_home_nav():
+    st.sidebar.page_link("pages/00_Fan_Home.py", label="Fan Home", icon="🏟️")
 
+def team_history_nav():
+    st.sidebar.page_link("pages/01_Team_History.py", label="Team History", icon="🏆")
 
-def world_bank_viz_nav():
-    st.sidebar.page_link(
-        "pages/01_World_Bank_Viz.py", label="World Bank Visualization", icon="🏦"
-    )
+def player_goals_nav():
+    st.sidebar.page_link("pages/02_Player_Goals.py", label="Player Goals", icon="⚽")
 
-
-def map_demo_nav():
-    st.sidebar.page_link("pages/02_Map_Demo.py", label="Map Demonstration", icon="🗺️")
+def match_schedule_nav():
+    st.sidebar.page_link("pages/03_Match_Schedule.py", label="Match Schedule", icon="📅")
 
 
-# ---- Role: usaid_worker -----------------------------------------------------
+# ---- Role: analyst ----------------------------------------------------------
 
-def usaid_worker_home_nav():
-    st.sidebar.page_link(
-        "pages/10_USAID_Worker_Home.py", label="USAID Worker Home", icon="🏠"
-    )
+def analyst_home_nav():
+    st.sidebar.page_link("pages/10_Analyst_Home.py", label="Analyst Home", icon="📊")
 
+def player_stats_nav():
+    st.sidebar.page_link("pages/11_Player_Stats.py", label="Player Stats Explorer", icon="🔍")
 
-def ngo_directory_nav():
-    st.sidebar.page_link("pages/14_NGO_Directory.py", label="NGO Directory", icon="📁")
+def top_scorers_nav():
+    st.sidebar.page_link("pages/12_Top_Scorers.py", label="Top Scorers", icon="🥇")
 
-
-def add_ngo_nav():
-    st.sidebar.page_link("pages/15_Add_NGO.py", label="Add New NGO", icon="➕")
-
-
-def prediction_nav():
-    st.sidebar.page_link(
-        "pages/11_Prediction.py", label="Regression Prediction", icon="📈"
-    )
+def scout_notes_nav():
+    st.sidebar.page_link("pages/13_Scout_Notes.py", label="Scouting Notes", icon="📝")
 
 
-def api_test_nav():
-    st.sidebar.page_link("pages/12_API_Test.py", label="Test the API", icon="🛜")
+# ---- Role: bettor -----------------------------------------------------------
+
+def bettor_home_nav():
+    st.sidebar.page_link("pages/20_Bettor_Home.py", label="Bettor Home", icon="💰")
+
+def card_stats_nav():
+    st.sidebar.page_link("pages/21_Card_Stats.py", label="Disciplinary Stats", icon="🟨")
+
+def head_to_head_nav():
+    st.sidebar.page_link("pages/22_Head_to_Head.py", label="Head to Head", icon="⚔️")
+
+def goals_trends_nav():
+    st.sidebar.page_link("pages/23_Goals_Trends.py", label="Goals Trends", icon="📈")
 
 
-def classification_nav():
-    st.sidebar.page_link(
-        "pages/13_Classification.py", label="Classification Demo", icon="🌺"
-    )
-
-
-# ---- Role: administrator ----------------------------------------------------
+# ---- Role: admin ------------------------------------------------------------
 
 def admin_home_nav():
-    st.sidebar.page_link("pages/20_Admin_Home.py", label="System Admin", icon="🖥️")
+    st.sidebar.page_link("pages/30_Admin_Home.py", label="Admin Home", icon="🛠️")
 
+def manage_records_nav():
+    st.sidebar.page_link("pages/31_Manage_Records.py", label="Manage Records", icon="📋")
 
-def ml_model_mgmt_nav():
-    st.sidebar.page_link(
-        "pages/21_ML_Model_Mgmt.py", label="ML Model Management", icon="🏢"
-    )
+def audit_log_nav():
+    st.sidebar.page_link("pages/32_Audit_Log.py", label="Audit Log", icon="🔎")
+
+def data_integrity_nav():
+    st.sidebar.page_link("pages/33_Data_Integrity.py", label="Data Integrity", icon="✅")
 
 
 # ---- Sidebar assembly -------------------------------------------------------
 
 def SideBarLinks(show_home=False):
-    """
-    Renders sidebar navigation links based on the logged-in user's role.
-    The role is stored in st.session_state when the user logs in on Home.py.
-    """
-
-    # Logo appears at the top of the sidebar on every page
     st.sidebar.image("assets/logo.png", width=150)
 
-    # If no one is logged in, send them to the Home (login) page
     if "authenticated" not in st.session_state:
         st.session_state.authenticated = False
         st.switch_page("Home.py")
@@ -98,24 +85,30 @@ def SideBarLinks(show_home=False):
 
     if st.session_state["authenticated"]:
 
-        if st.session_state["role"] == "pol_strat_advisor":
-            pol_strat_home_nav()
-            world_bank_viz_nav()
-            map_demo_nav()
+        if st.session_state["role"] == "fan":
+            fan_home_nav()
+            team_history_nav()
+            player_goals_nav()
+            match_schedule_nav()
 
-        if st.session_state["role"] == "usaid_worker":
-            usaid_worker_home_nav()
-            ngo_directory_nav()
-            add_ngo_nav()
-            prediction_nav()
-            api_test_nav()
-            classification_nav()
+        if st.session_state["role"] == "analyst":
+            analyst_home_nav()
+            player_stats_nav()
+            top_scorers_nav()
+            scout_notes_nav()
 
-        if st.session_state["role"] == "administrator":
+        if st.session_state["role"] == "bettor":
+            bettor_home_nav()
+            card_stats_nav()
+            head_to_head_nav()
+            goals_trends_nav()
+
+        if st.session_state["role"] == "admin":
             admin_home_nav()
-            ml_model_mgmt_nav()
+            manage_records_nav()
+            audit_log_nav()
+            data_integrity_nav()
 
-    # About link appears at the bottom for all roles
     about_page_nav()
 
     if st.session_state["authenticated"]:
