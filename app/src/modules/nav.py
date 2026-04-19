@@ -74,7 +74,7 @@ def data_integrity_nav():
 # ---- Sidebar assembly -------------------------------------------------------
 
 def SideBarLinks(show_home=False):
-    st.sidebar.image("assets/logo.png", width=150)
+    st.sidebar.image("assets/cupvaultapplogo.jpg", width=150)
 
     if "authenticated" not in st.session_state:
         st.session_state.authenticated = False
