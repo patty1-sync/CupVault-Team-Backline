@@ -31,7 +31,7 @@ with col1:
         st.session_state['role'] = 'fan'
         st.session_state['first_name'] = 'Jason'
         st.session_state['user_id'] = 1
-        st.switch_page('pages/00_Fan_Home.py')
+        st.switch_page('pages/00_fan_home.py')
 
     st.write('')
     st.write('**📊 Sports Analyst**')
@@ -41,7 +41,7 @@ with col1:
         st.session_state['role'] = 'analyst'
         st.session_state['first_name'] = 'Maria'
         st.session_state['user_id'] = 2
-        st.switch_page('pages/10_Analyst_Home.py')
+        st.switch_page('pages/10_analyst_home.py')
 
 with col2:
     st.write('**💰 Sports Bettor**')
@@ -51,7 +51,7 @@ with col2:
         st.session_state['role'] = 'bettor'
         st.session_state['first_name'] = 'Andrew'
         st.session_state['user_id'] = 3
-        st.switch_page('pages/20_Bettor_Home.py')
+        st.switch_page('pages/20_bettor_home.py')
 
     st.write('')
     st.write('**🛠️ Database Admin**')
@@ -61,4 +61,4 @@ with col2:
         st.session_state['role'] = 'admin'
         st.session_state['first_name'] = 'Jake'
         st.session_state['user_id'] = 4
-        st.switch_page('pages/30_Admin_Home.py')
+        st.switch_page('pages/30_admin_home.py')

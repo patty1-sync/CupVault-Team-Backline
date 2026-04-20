@@ -20,14 +20,14 @@ st.write('---')
 if st.button('🏆 View Team World Cup History',
              type='primary',
              use_container_width=True):
-    st.switch_page('pages/01_Team_History.py')
+    st.switch_page('pages/01_team_history.py')
 
 if st.button('⚽ Look Up Player Goal Records',
              type='primary',
              use_container_width=True):
-    st.switch_page('pages/02_Player_Goals.py')
+    st.switch_page('pages/02_player_goals.py')
 
 if st.button('📅 View Match Schedule & Brackets',
              type='primary',
              use_container_width=True):
-    st.switch_page('pages/03_Match_Schedule.py')
+    st.switch_page('pages/03_match_schedule.py')
