@@ -16,7 +16,7 @@ def player_goals_nav():
     st.sidebar.page_link("pages/02_player_goals.py", label="Player Goals", icon="⚽")
 
 def favorites_nav():
-    st.sidebar.page_link("pages/01_team_history.py", label="My Favorites", icon="⭐")
+    st.sidebar.page_link("pages/01_favorites.py", label="My Favorites", icon="⭐")
 
 def match_schedule_nav():
     st.sidebar.page_link("pages/03_match_schedule.py", label="Match Schedule", icon="📅")
