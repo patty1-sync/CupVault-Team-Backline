@@ -17,7 +17,7 @@ st.write('---')
 
 # ---- Navigation Buttons -----------------------------------------------------
 
-if st.button('💛 Favorites',
+if st.button('💛 Favorite Teams and Players',
              type='primary',
              use_container_width=True):
     st.switch_page('pages/01_favorites.py')
