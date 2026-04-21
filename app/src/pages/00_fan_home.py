@@ -17,7 +17,7 @@ st.write('---')
 
 # ---- Navigation Buttons -----------------------------------------------------
 
-if st.button('🏆 View Team World Cup History',
+if st.button('💛 Favorites',
              type='primary',
              use_container_width=True):
     st.switch_page('pages/01_favorites.py')
