@@ -13,7 +13,7 @@ CupVault is a centralized platform for exploring historical FIFA World Cup data.
 
 ## Demo Video
 
-[Watch our pitch and demo video here](PASTE_YOUR_VIDEO_LINK_HERE)
+[Watch our pitch and demo video here](https://youtu.be/UuePU2XrvWc)
 
 ## Getting Started
 
